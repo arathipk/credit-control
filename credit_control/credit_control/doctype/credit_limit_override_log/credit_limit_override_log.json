@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-09-05 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sales_invoice",
+  "customer",
+  "company",
+  "column_break_4",
+  "overridden_by",
+  "override_datetime",
+  "section_break_7",
+  "invoice_grand_total",
+  "outstanding_amount",
+  "column_break_11",
+  "credit_limit",
+  "grace_amount",
+  "effective_limit",
+  "worst_overdue_days",
+  "reason"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "overridden_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Overridden By",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "override_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Override Datetime",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "label": "Numbers at Time of Override"
+  },
+  {
+   "fieldname": "invoice_grand_total",
+   "fieldtype": "Currency",
+   "label": "Invoice Grand Total"
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount (before this invoice)"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "credit_limit",
+   "fieldtype": "Currency",
+   "label": "Credit Limit"
+  },
+  {
+   "fieldname": "grace_amount",
+   "fieldtype": "Currency",
+   "label": "Grace Amount"
+  },
+  {
+   "fieldname": "effective_limit",
+   "fieldtype": "Currency",
+   "label": "Effective Limit (Credit Limit + Grace)"
+  },
+  {
+   "fieldname": "worst_overdue_days",
+   "fieldtype": "Int",
+   "label": "Worst Overdue Days"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason for Breach"
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-05 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Credit Control",
+ "name": "Credit Limit Override Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Accounts Manager"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
