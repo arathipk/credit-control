@@ -1,14 +1,14 @@
 app_name = "credit_control"
 app_title = "Credit Control"
-app_publisher = "Enfono Technologies"
+app_publisher = "arathi@enfono.com"
 app_description = "Custom credit limit, grace amount and overdue-days control for Sales Invoice submission, extending ERPNext credit limit checks."
-app_email = "salman@enfono.com"
+app_email = "arathi@enfono.com"
 app_license = "mit"
 
 # Apps
 # ------------------
 
-# required_apps = []
+required_apps = ["erpnext"]
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -82,8 +82,7 @@ app_license = "mit"
 # Installation
 # ------------
 
-# before_install = "credit_control.install.before_install"
-# after_install = "credit_control.install.after_install"
+after_install = "credit_control.install.after_install"
 
 # Uninstallation
 # ------------
@@ -137,13 +136,14 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Sales Invoice": {
+		"before_submit": "credit_control.credit_control.credit_check.validate_credit_limit",
+	},
+	"Customer": {
+		"validate": "credit_control.credit_control.credit_check.disable_native_credit_limit",
+	},
+}
 
 # Scheduled Tasks
 # ---------------
